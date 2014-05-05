@@ -1,0 +1,90 @@
+/*
+ * Creado por SharpDevelop.
+ * Usuario: Juan
+ * Fecha: 30/04/2014
+ * Hora: 10:11 a.m.
+ * 
+ * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
+ */
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace Practica5
+{
+	/// <summary>
+	/// Description of MainForm.
+	/// </summary>
+	public partial class MainForm : Form
+	{
+		public MainForm()
+		{
+			//
+			// The InitializeComponent() call is required for Windows Forms designer support.
+			//
+			InitializeComponent();
+			
+			//
+			// TODO: Add constructor code after the InitializeComponent() call.
+			//
+		}
+		
+		
+		void Button1Click(object sender, EventArgs e)
+		{
+			string valores="";
+				
+            
+			if((this.checkBox1.Checked) && (this.checkBox2.Checked) && (this.checkBox6.Checked))
+				{
+					valores += "\n1.- Correcto\n";
+				}
+				else if  ((this.checkBox3.Checked) || (this.checkBox4.Checked) || (this.checkBox5.Checked))
+				{
+			   		valores += "1.- Incorrecto\n";
+				}
+		  
+				
+			if(this.radioButton1.Checked)
+				{
+					valores += "2.- Correcto\n";
+				}
+				else if ((this.radioButton2.Checked) || (this.radioButton3.Checked))
+				{
+					valores += "2.- Incorrecto\n";
+				}
+			
+			if( this.numericUpDown1.Value == 31){
+					
+					valores += "3.- Correcto\n";
+				}
+				else if(this.numericUpDown1.Value != 31){
+					
+					valores+= "3.- Incorrecto\n";
+					
+				}	
+				
+			valores += "4.- La fecha correcta es: 16/09/1810\n Tu ingresaste: " +this.monthCalendar1.SelectionStart.ToShortDateString();
+				
+			System.Windows.Forms.MessageBox.Show(valores);
+		}
+		
+		void Button2Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+		
+	
+		
+		void NumericUpDown1ValueChanged(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void Label2Click(object sender, EventArgs e)
+		{
+			
+		}
+		}
+	}
